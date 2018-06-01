@@ -1,0 +1,35 @@
+
+body{
+	background: url("bgimage3.jpg"); 
+background-repeat: no-repeat; 
+background-size:cover; opacity: 0.6; 
+background-position: left; background-attachment: fixed;
+}
+   input[type=text]{ padding:5px 10px 5px 10px;margin:10px 20px 20px 22px;box-sizing:box-border;width: 278px;height: 30px;}
+   select{padding:1px 0px;margin:10px 20px 20px 30px;}
+   label{font-size:20px;float:left;width:425px;padding:15px 20px 4px 257px;}
+   input[type=radio]{ padding:5px 12px 5px; margin:10px 12px 20px 30px;}
+   input[type=button]{color: white;padding:11px 30px 7px 27px;font-size: 16px;margin: 67px 96px 10px 243px ;cursor: pointer;background-color: navy;width:170px;height: 50px;}
+    h1{text-align: center;font-size:40px;}
+
+    @media only screen and (max-width:1040px){
+input[type=text]{ padding:5px 10px 5px 10px;margin:10px 20px 20px 22px;box-sizing:box-border;width: 278px;height: 30px;}
+select{padding:1px 0px;margin:10px 20px 20px 30px;}
+label{font-size:20px;width:278px;padding:1px 1px 2px 122px;}
+input[type=button]{color: white;padding:11px 30px 7px 27px;font-size: 16px;margin: 67px 96px 10px 229px ;cursor: pointer;background-color: navy;width:118px;height: 50px;}
+h1{text-align: center;font-size:35px;}
+
+@media only screen and (max-width:753px){
+input[type=text]{ padding:5px 10px 5px 10px;margin:10px 20px 20px 22px;box-sizing:box-border;width: 215px;height: 30px;}
+select{padding:1px 0px;margin:10px 20px 20px 30px;}
+label{font-size:20px;width:215px;padding:14px 1px 2px 122px;}
+input[type=button]{color: white;padding:11px 30px 7px 27px;font-size: 16px;margin: 67px 96px 10px 229px ;cursor: pointer;background-color: navy;width:118px;height: 50px;}
+h1{text-align: center;font-size:40px;}
+
+
+@media only screen and (max-width:690px){
+input[type=text]{ padding:5px 10px 5px 10px;margin:10px 20px 20px 22px;box-sizing:box-border;width: 191px;height: 30px;}
+select{padding:1px 0px;margin:10px 20px 20px 30px;}
+label{font-size:20px;width:191px;padding:14px 1px 3px 20px;}
+input[type=button]{color: white;padding:11px 30px 7px 27px;font-size: 16px;margin: 67px 96px 10px 229px ;cursor: pointer;background-color: navy;width:118px;height: 50px;}
+h1{text-align: center;font-size:40px;}

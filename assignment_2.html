@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+</head>
+<body>
+	<h>Create 2 input fields for Name and Age. Make a button which calls a function on click. The function should take values from input fields and print it inside a paragraph on screen. (function should be arrow function).</h><br>
+	<input type="text" placeholder="enter your name" id="name"> </br>
+	<input type="number" placeholder="enter your age" id="age"></br>
+	<button onclick="submitDetails()">Submit </button>
+	<p >Your name is: <span id="yourname"></span></p>
+	<p >Your are <span id="yourage"></span> years old </p>
+
+	<script type="text/javascript">
+	   function submitDetails()
+
+	  {
+	  var name = document.getElementById( "name" ).value; 
+	  var age = document.getElementById( "age" ).value;
+
+	  document.getElementById("yourname").innerHTML = name;
+	  document.getElementById("yourage").innerHTML = age;
+	  } 	
+
+	</script>
+
+</body>
+</html>

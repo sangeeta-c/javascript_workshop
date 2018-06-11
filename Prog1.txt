@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+<h2>Even Numbers</h2>
+<p id="even" > </p>
+
+
+<script>
+
+
+for(var i=0;i<=100; i++)
+{if(i%2==0)
+document.getElementById("even").innerHTML +=i + "</br>";
+}
+
+</script>
+</body>
+</html> 

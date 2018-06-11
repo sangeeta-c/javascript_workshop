@@ -1,0 +1,26 @@
+<!DOCTYPE>
+<html>
+<head>
+</head>
+<body>
+	
+        <h3>to print Even Number</h3>
+     
+	<input type="number" placeholder="Enter number" value="" id="numb"/>
+        
+<button onclick="onButtonClick()">Print Even</button>
+<p id="Even"></p>
+<script>
+function onButtonClick() {
+            		var num = document.getElementById("numb").value;
+	      
+var i;
+for (i = 0; i <= num; i++) 
+if(i%2 == 0){
+document.getElementById("Even").innerHTML += i +"<br>";
+}
+}
+</script>
+
+</body>
+</html>

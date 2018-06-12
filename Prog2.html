@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title> Prog 2 </title>
+<h3>2nd Program- Display Name and Age</h3>
+<body>
+ Name <input type="text" id="name" > </input><br><br>
+ Age  <input type="number" id="age" > </input><br><br>
+<button onClick="test1()"> Submit</button>
+
+<p id="demo"> </p>
+
+<script>
+function test1() {
+var name=document.getElementById("name").value;
+var age=document.getElementById("age").value;
+document.getElementById("demo").innerHTML= name + "<br>" + age;
+
+}
+
+</script>
+
+
+</body>
+</html>

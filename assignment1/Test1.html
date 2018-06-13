@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment1 - Program1</title>
+		<h1> Program to Print all even numbers between 0 to 100 </h1>
+		
+		   <script type="text/javascript">
+		
+			function Even()
+			{
+			document.write("EVEN NUMBERS BETWEEN 0 TO 100 ARE:" + "</br>" + "</br>")
+			var number = 0;
+			while (number <= 100) {
+			if (number % 2 === 0) {
+				document.write(number + " <br/>");
+				number++;
+				}
+			else {
+				//document.write(number + " is odd number <br/>");
+					number++;
+				}
+			
+								}
+			}
+			
+		</script>
+       
+    </head>
+
+    <body>		 
+        <form>
+		<input type = "button" onclick = "Even()" value= "CLICK TO PRINT">
+		</form>
+    </body>
+</html>

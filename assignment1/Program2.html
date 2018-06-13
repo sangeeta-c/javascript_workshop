@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Assignment1 - Program2</title>
+	</head>
+		
+	  <body>
+		<h1> Program to Print name and age entered.. </h1>
+		<p>
+		<button onclick="Even()">CLICK TO PRINT</button>
+		</p>
+		
+		<p id = "Test"> </p>
+		
+		
+		 <script>
+	
+ var Even =() => { 
+				var customerName = prompt("Please enter your name", "");
+				if (customerName!= null) {
+				document.getElementById("Test").innerHTML += customerName + "<br/>";
+				}
+				var customerAge = prompt("Please enter your age", "");
+				if (customerAge!= null) {
+				document.getElementById("Test").innerHTML += customerAge + "<br/>";
+				}
+			};
+			</script>
+			
+	</body>
+	
+</html>

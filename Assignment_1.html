@@ -1,0 +1,79 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment1_Supriya</title>
+           <body>
+              <h1> Javascript Functions</h1>
+              <h2>Regular Function Print Even Numbers From 1 To 100 In Console</h2>
+              <button onclick=" EvenNumber(1,100)"> EvenNumber!!</button>
+              <h2>Arrow Function Take the values from input field and print it on Screen</h2>
+              Name:<br> 
+              <input type="text" placeholder="Enter your name" value="" id="name"><br><br>
+              Age:<br> 
+              <input type="text" placeholder="Age" value="" id="age"><br><br>
+              <button onclick="onButtonClick()">Print!!</button>
+              <p id="nameDisplay"></p>
+           
+                 <script>
+
+
+                      function EvenNumber(num_start, num_end){
+    // if begin is odd, increment.
+    if(num_start%2 === 1){
+        num_start++;
+    }
+ 
+    for(var i=num_start; i<=num_end; i+=2){
+        console.log(i);
+    }
+}
+ 
+// EvenNumber(1,50);
+                      
+
+                      // function*incrementor(num)
+// {
+//  while(num<=100)
+//  {
+//    yield num=num+2
+//  }
+// }
+// var number= incrementor(2)
+// console.log(number.next().value);
+
+//  var line=[];
+// for (var i = 2; i <= 100; i += 2) {
+//   if (line.length == 5) {
+//     console.log(line);
+//     line=[];
+//   }
+//   line.push(i);
+// }
+// console.log(line);
+                      var onButtonClick=(name =  document.getElementById("name").value,
+                       age =  document.getElementById("age").value) => document.getElementById("nameDisplay").innerHTML += "name: " + name  + " age: " + age;
+                    onButtonClick()
+                 
+                </script>
+                 <style>
+            h1{
+                text-align: center;
+                font-family: verdana;
+            }
+            body {
+                  background-color: lightblue;
+                    }
+             input[type=text] {
+                             width: 50%;
+                   padding: 12px 20px;
+                   margin: 8px 0;
+                   box-sizing: border-box;
+                   border: none;
+                 
+                 }
+        </style>
+       </body>
+       </head>
+      </html>

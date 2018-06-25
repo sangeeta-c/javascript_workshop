@@ -2,10 +2,46 @@
 <html>
 <head>
 	<title></title>
+
+	<style>
+		
+       body {font-family: Arial, Helvetica, sans-serif;font-size: 25px;}
+       h2{ text-align: center;display: block;}
+       #details {  }
+
+	</style>
+    
 </head>
 <body>
 	<h>Q2) Create an array containing atleast 5 animal objects with keys "name", "type (eg. dog, cat)", "breed", "color".
 loop this array and print the sentence <name> is my pet <type>, it is <color> in color and belongs to <breed> breed. the sentence should be printed in different "li" tags under the same "ul" tag</h>
+
+<ul id="details"></ul>
+
+<script>
+
+	var pet = [ {name:"JoJo",type:"Dog",breed:"Rottweiler",color:"dark brown",eye:"jade-green"},
+				{name:"Snowbell",type:"Cat",breed:"Persian cat",color:"white",eye:"copper"},
+				{name:"Chetak",type:"Horse",breed:"Kathiawari",color:"dark brown",eye:"hazel"},
+				{name:"Stuart",type:"Rat",breed:"Rottweiler",color:"brown",eye:"pink"},
+				{name:"Hedwig",type:"Bird",breed:"Snowy Owl",color:"White-grey",eye:"yellow"} ]
+			   
+     for ( i=0; i<pet.length; i++)
+	     {
+	     	petinfo ="<li>My pet name is " + pet[i].name + "." + " Its a " + pet[i].type + " and belongs to " + pet[i].breed + " breed." + " he is " + pet[i].color + " in color and have " + pet[i].eye + " eyes." + "</li>";
+	     	document.getElementById("details").innerHTML += petinfo;
+	     }
+
+
+
+	     
+
+
+	
+
+
+</script>
+
 
 </body>
 </html>

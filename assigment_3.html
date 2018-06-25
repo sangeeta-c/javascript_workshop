@@ -35,7 +35,7 @@
 			      <p id="error_msg_lname" class="error_msg"></p>
 
 			    <label for="email">Email Id</label>
-			      <input type="text" id="email" name="email" placeholder="Enter Your Email id" >
+			      <input type="email" id="email" name="email" placeholder="Enter Your Email id" >
 			      <p id="error_msg_email" class="error_msg"></p>
 
 			    <label for="phone">Phone Number</label>
@@ -50,6 +50,7 @@
 			               <input type="radio" name="gender" value="other"> Other</br>
 			        <div>     
 		        </div>
+		        <p id="error_msg_gender" class="error_msg"></p>
 		    
 		      <button id="submit" type="button" value="Submit" onmouseover="hoverEffect()" onmouseout="nonhoverEffect()" onclick="javascript: validateForm()" >Submit</button>
 	    </form>
@@ -70,6 +71,8 @@
     </div>
    
    <script>
+
+   	var radiochavalue;
    	
        function hoverEffect()
        {
@@ -84,9 +87,77 @@
 
        }
        
-     
 
-       function submitinfo()
+     function validateForm()
+     {
+
+     	  	
+        var fname = document.getElementById("fname").value;
+       	var lname = document.getElementById("lname").value;
+       	var email = document.getElementById("email").value;
+       	var phone = document.getElementById("phone").value;
+       	var radioBtns = document.getElementsByName("gender");
+       	// console.log(radioBtns+"asdsadsad");
+       	
+       	
+     		 if(fname=="")
+        	{
+        		document.getElementById("error_msg_fname").innerText = "*Please fill out this field.";
+          		return false;
+       
+   	        }
+   	       else if(lname=="")
+        	{
+        		document.getElementById("error_msg_lname").innerText = "*Please fill out this field."
+          		return false;
+       
+   	        }
+   	        else if(email=="")
+        	{
+        		document.getElementById("error_msg_email").innerText = "*Please fill out this field."
+          		return false;
+       
+   	        }
+   	        else if(phone=="")
+        	{
+        		document.getElementById("error_msg_phone").innerText = "*Please fill out this field."
+          		return false;
+       
+   	        }
+   	        	for(var i=0; i<radioBtns.length; i++)
+        {
+        	if(radioBtns[i].checked)
+        	  {
+        		radiochavalue = radioBtns[i].value;
+        	   }
+         }
+         	if(radiochavalue=="" || radiochavalue==undefined)
+
+        	{
+        		
+        		document.getElementById("error_msg_gender").innerText = "*select gender.";
+          		return false;
+       
+   	        }
+
+
+
+
+
+
+
+   	        else{
+   	        	submitinfo()
+   	        }
+
+       	       
+
+
+
+       	       
+     }
+
+     function submitinfo()
        {
        	
        	var fname = document.getElementById("fname").value;
@@ -101,51 +172,13 @@
         document.getElementById("yourlastname").innerText = lname;
         document.getElementById("emailid").innerText = email; 
         document.getElementById("number").innerText = phone;
-        var radioBtns = document.getElementsByName("gender");
-        for(var i=0; i<radioBtns.length; i++){
-        	if(radioBtns[i].checked){
-        		document.getElementById("gender").innerText = radioBtns[i].value;
-        	}
-        }
+        document.getElementById("gender").innerText = radiochavalue;
+
+        
+        
 
 
        }
-
-     function validateForm()
-     {
-        var fname = document.getElementById("fname").value;
-       	var lname = document.getElementById("lname").value;
-       	var email = document.getElementById("email").value;
-       	var phone = document.getElementById("phone").value;
-
-     		if(fname=="")
-            	{
-            		document.getElementById("error_msg_fname").innerText = "*Please fill out this field.";
-              		return false;
-           
-       	        }
-       	       else if(lname=="")
-            	{
-            		document.getElementById("error_msg_lname").innerText = "*Please fill out this field."
-              		return false;
-           
-       	        }
-       	        else if(email=="")
-            	{
-            		document.getElementById("error_msg_email").innerText = "*Please fill out this field."
-              		return false;
-           
-       	        }
-       	        else if(phone=="")
-            	{
-            		document.getElementById("error_msg_phone").innerText = "*Please fill out this field."
-              		return false;
-           
-       	        }
-
-
-       	       
-     }
 
        
 

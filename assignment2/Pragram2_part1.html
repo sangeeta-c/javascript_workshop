@@ -1,0 +1,39 @@
+<html>
+<body>
+<h1>JavaScript Assignment2 </h1>
+<p>Animal features are:</p>
+<p id="demo"></p>
+<button onclick="Animal_features()">Features!!</button>
+
+
+<script>
+function Animal_features()
+{
+  
+const Animals = [
+{Name:"Dog", breed:"German Shepherd ", sound:"bark", color:"black"},
+
+{Name:"Cat", breed:"Birman", sound:"mew", color:"white"},
+
+{Name:"Horse", breed:"Mustang", sound:" snort", color:"brown"},
+
+{Name:"Elephant", breed:"Loxodonta", sound:"Trumpet", color: "black"},
+
+{Name:"Dinosaurs", breed:"Allosaurus ", sound:"Huge", color:"green"}]
+
+var i,animal_features;
+
+for (i = 0; i < Animals.length; i++) {
+      animal_features += (Animals[i].Name + "is my pet" +",its colour is " + Animals[i].color + " " + "and it belong to breed" + Animals[i].breed);
+      
+      console.log(Animals[i].Name + "is my pet" +",its colour is " + Animals[i].color + " " + "and it belong to breed" + Animals[i].breed);
+    }
+
+document.getElementById("demo").innerHTML += animal_features;
+
+};
+</script>
+      
+</body>
+</html> 
+

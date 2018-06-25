@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The best way to loop through an array is using a standard for loop:</p>
+
+<p id="demo"></p>
+
+<script>
+var fruits, text, fLen, i;
+
+const Animals = [
+{Name:"Dog", breed:"German Shepherd ", sound:"bark", color:"black"},
+
+{Name:"Cat", breed:"Birman", sound:"mew", color:"white"},
+
+{Name:"Horse", breed:"Mustang", sound:" snort", color:"brown"},
+
+{Name:"Elephant", breed:"Loxodonta", sound:"Trumpet", color: "black"},
+
+{Name:"Dinosaurs", breed:"Allosaurus ", sound:"Huge", color:"green"}];
+
+var i,text;
+text = "<ul>";
+fLen = Animals.length;
+
+for (i = 0; i < flen i++) {
+      text += "<li>" + Animals[i].Name + "is my pet" +",its colour is " + Animals[i].color + " " + "and it belong to breed" + Animals[i].breed + "</li>";
+      
+      console.log(Animals[i].Name + "is my pet" +",its colour is " + Animals[i].color + " " + "and it belong to breed" + Animals[i].breed);
+    }
+
+text += "</ul>";
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+<form>
+<h1 style="text-align: left-side"> Form Validation</h1>
+
+<p>Enter your name: <input type="text" min="3" id="fname" ></p>
+<p>Enter your Email: <input type="text" id="femail" min="3"></p>
+<p>Enter your Phone: <input type="text" id="fphone" min="8" max="10"></p>
+<p>Gender <select id="fgender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option> </p> 
+ </select>
+    </form>
+    
+ <p><input type="submit" onclick="showName();"><p/>
+
+  <h1 style="text-align: left-side"> Form Output </h1>
+  <label>NAME: </label><tr>
+  <span id='Name1'></span><br>
+  <label>EMAIL: </label><tr>
+  <span id='Email1'></span><br>
+  <label>PHONE: </label><tr>
+  <span id='Phone1'></span><br>
+  <label>GENDER: </label><tr>
+  <span id='Gender1'></span>   
+    
+
+
+
+<script>
+document.getElementById("fname").onchange = function() {myFunction1()};
+function myFunction1() {
+var x = document.getElementById("fname");
+if (x.value == "")                
+  {
+    alert("Please enter your name.");
+   return false;
+  }
+    x.value = x.value.toUpperCase();
+	return x;
+}
+
+document.getElementById("femail").onchange = function() {myFunction2()};
+function myFunction2() {
+    var y = document.getElementById("femail");
+    y.value = y.value.toUpperCase();
+	if (y.value == "")                
+  {
+    alert("Please enter your email address.");
+   return false;
+  }
+	return y;
+}
+
+document.getElementById("fphone").onchange = function() {myFunction3()};
+function myFunction3() {
+    var z = document.getElementById("fphone");
+	if (z.value == "")                
+  {
+    alert("Please enter your phone number");
+   return false;
+  }
+  if (z.value < 8 || z.value > 10) 
+  {
+        alert("Please enter your telephone number between 8 to 10 digits");
+        return false;
+  }
+	return z;
+}
+
+
+
+function showName() {
+        document.getElementById('Name1').innerHTML =  document.getElementById("fname").value;
+       document.getElementById('Email1').innerHTML =  document.getElementById("femail").value;
+       document.getElementById('Phone1').innerHTML =  document.getElementById("fphone").value;
+      document.getElementById('Gender1').innerHTML =  document.getElementById("fgender").value
+                   
+    }
+
+
+</script>
+
+
+</body>
+</html>

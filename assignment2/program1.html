@@ -10,7 +10,7 @@
 <h1 style="text-align: left-side"> Form Validation</h1>
 
 <p>Enter your name: <input type="text" min="3" id="fname" ></p>
-<p>Enter your Email: <input type="text" id="femail" min="3"></p>
+<p>Enter your Email: <input type="email" id="femail" min="3"></p>
 <p>Enter your Phone: <input type="text" id="fphone" min="8" max="10"></p>
 <p>Gender <select id="fgender">
         <option value="Male">Male</option>
@@ -34,6 +34,10 @@
 
 
 <script>
+var vname = false;
+var vemail = false;
+var vphone = false;
+
 document.getElementById("fname").onchange = function() {myFunction1()};
 function myFunction1() {
 var x = document.getElementById("fname");
@@ -42,20 +46,25 @@ if (x.value == "")
     alert("Please enter your name.");
    return false;
   }
+  else{
     x.value = x.value.toUpperCase();
+	vname = true
 	return x;
+	}
 }
 
 document.getElementById("femail").onchange = function() {myFunction2()};
-function myFunction2() {
+function myFunction2(){ 
     var y = document.getElementById("femail");
     y.value = y.value.toUpperCase();
 	if (y.value == "")                
   {
     alert("Please enter your email address.");
    return false;
-  }
+  }else{
+  vemail = true; 
 	return y;
+	}
 }
 
 document.getElementById("fphone").onchange = function() {myFunction3()};
@@ -66,20 +75,24 @@ function myFunction3() {
     alert("Please enter your phone number");
    return false;
   }
-  if (z.value < 8 || z.value > 10) 
-  {
-        alert("Please enter your telephone number between 8 to 10 digits");
+  if (z.value.length != 8 && z.value.length != 10) 
+  {console.log(z.value.length)
+        alert("Please enter your telephone number of 8 or 10 digits");
         return false;
   }
+  else{
+  vphone = true;
 	return z;
+	}
 }
 
 
 
 function showName() {
-        document.getElementById('Name1').innerHTML =  document.getElementById("fname").value;
-       document.getElementById('Email1').innerHTML =  document.getElementById("femail").value;
-       document.getElementById('Phone1').innerHTML =  document.getElementById("fphone").value;
+console.log(vphone);
+        if(vname) document.getElementById('Name1').innerHTML =   document.getElementById("fname").value;
+       if(vemail) document.getElementById('Email1').innerHTML =   document.getElementById("femail").value;
+       if(vphone) document.getElementById('Phone1').innerHTML =   document.getElementById("fphone").value;
       document.getElementById('Gender1').innerHTML =  document.getElementById("fgender").value
                    
     }

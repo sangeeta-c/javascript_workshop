@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html>
+  
+        <title>Assignment2_Supriya</title>
+           <body>
+              <h1> Form Validation</h1>
+      <h2>print the value on Screen</h2>
+              Name:<br> 
+              <input type="text" placeholder="Enter your name" value="" id="name"size="20" minlength="8" maxlength="10" .onchange = function() {onButtonClick()};><br><br>
+              Email Address:<br> 
+              <input type="text" placeholder="Enter Email Address" value="" id="Email_Address" .onchange = function() {onButtonClick()};><br><br>
+              Phone:<br>
+              <input type="number" placeholder="123-456-7890" value="" id="phone"size="20" minlength="8" maxlength="20".onchange = function() {onButtonClick()}; required><br><br>
+              Gender:<br>
+              <input type="radio" value="male" name=Gender id="M" .onchange = function() {onButtonClick()}> Male<br>
+              <input type="radio" value="female" name=Gender id="F".onchange = function() {onButtonClick()}> Female<br><br>
+              <button onclick="onButtonClick()">submit!!</button>
+              <p id="nameDisplay"></p>
+           
+                 <script>
+function onButtonClick()
+{
+              var name = document.getElementById("name").value;
+              var x = document.getElementById("name");
+              x.value = x.value.toUpperCase();
+            
+             var Email_Address = document.getElementById("Email_Address").value;
+             var y = document.getElementById("Email_Address");
+              y.value = y.value.toUpperCase();
+             
+             var phone= document.getElementById("phone").value;
+             // var genderM=M;
+             // var genderF=F;
+          if(name=="")
+              {
+                alert ("Please enter your name atleast 3 character required");
+          }
+          else if(Email_Address == "")
+              {
+                alert ("Please enter your Email_Address");
+          }
+
+          else if (phone.length > 10 || phone.length == 0) 
+              {
+                alert ("Phone number cannot be greater than 10 digits or empty");
+          
+          }
+    // else if(genderM.checked==false && genderM.checked==false ) {
+    //     alert("You must select male or female");
+    //    return false;
+          else if (document.getElementById('M').checked){
+          Gender = document.getElementById("M").value;
+           }
+           else if (document.getElementById('F').checked){
+           Gender = document.getElementById("F").value;
+          }
+          else alert("You must select male or female");
+
+document.getElementById("nameDisplay").innerHTML += "name: " + x.value  + " </br> Email_Address: " + y.value+ "</br> Phone:" + phone + "</br> Gender:"+Gender+ "</br>" 
+
+              }
+                 
+                </script>
+                 <style>
+            h1{
+                text-align: center;
+                font-family: verdana;
+            }
+            body {
+                  background-color: lightblue;
+                    }
+             input[type=text] {
+                             width: 50%;
+                   padding: 12px 20px;
+                   margin: 8px 0;
+                   box-sizing: border-box;
+                   border: none;
+                 
+                 }
+        </style>
+       </body>
+      
+      </html>

@@ -3,13 +3,13 @@
 <h1>JavaScript Assignment2 </h1>
 <p>Animal features are:</p>
 <p id="demo"></p>
-<button onclick="Animal_features()">Features!!</button>
+<button onclick="Animal_features()">Click!!</button>
 
 
 <script>
 function Animal_features()
 {
-  
+	
 const Animals = [
 {Name:"Dog", breed:"German Shepherd ", sound:"bark", color:"black"},
 
@@ -22,13 +22,13 @@ const Animals = [
 {Name:"Dinosaurs", breed:"Allosaurus ", sound:"Huge", color:"green"}]
 
 var i,animal_features;
-
+animal_features = "<ul>";
 for (i = 0; i < Animals.length; i++) {
-      animal_features += (Animals[i].Name + "is my pet" +",its colour is " + Animals[i].color + " " + "and it belong to breed" + Animals[i].breed);
+      animal_features += "<li>" + Animals[i].Name + " " + "is my pet" + " " +  ",its colour is " + " " +  Animals[i].color + " " + "and it belong to breed" + " " +  Animals[i].breed+ "</li>" + "<br>";
       
       console.log(Animals[i].Name + "is my pet" +",its colour is " + Animals[i].color + " " + "and it belong to breed" + Animals[i].breed);
     }
-
+animal_features += "</ul>";
 document.getElementById("demo").innerHTML += animal_features;
 
 };

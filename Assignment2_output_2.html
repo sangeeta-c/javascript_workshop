@@ -1,0 +1,49 @@
+<html>
+<body>
+<title>Assignment2_Supriya</title>
+<h1>JavaScript Objects</h1>
+<p>Dispaly Animal properties.</p>
+<button onclick="Animal_properties()">Display!!</button>
+<p id="demo"></p>
+
+<script>
+function Animal_properties()
+{
+	
+var animal = [{Name:"Dog", breed:"Pembroke Welsh Corgi", sound:"bark"},{Name:"Cat", breed:"Persian cat", sound:"mew"},
+{Name:"Bear", breed:"Sloth beai", sound:"Growl"},{Name:"Elephant", breed:"African bush", sound:"Trumpet"},
+{Name:"Lion", breed:"Asiatic lion", sound:"Roar"}];
+var object = '<ul>'
+var i;
+for (i = 0; i < animal.length; i++) {
+        object += '<li>'+animal[i].Name + '  ' +"belong to" +'  '+animal[i].breed+ '  '+"breed and sound is" + '  ' +animal[i].sound+ "<br>"; + '</li>';
+    }
+  object += '</ul>'
+    document.getElementById("demo").innerHTML = object;
+}
+
+</script>
+                 <style>
+            h1{
+                text-align: center;
+                font-family: verdana;
+            }
+            p{
+              font-family: verdana;
+              font-size: 20px;
+            }
+            body {
+                  background-color: lightblue;
+                    }
+                    ul{
+    list-style-type: square;
+    text-align: left;
+                font-family: verdana;
+              }
+                
+        </style>
+
+</body>
+</html>
+
+ 

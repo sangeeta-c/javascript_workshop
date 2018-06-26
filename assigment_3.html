@@ -72,7 +72,7 @@
    
    <script>
 
-   	var radiochavalue;
+   	var genderValue;
    	
        function hoverEffect()
        {
@@ -128,14 +128,14 @@
         {
         	if(radioBtns[i].checked)
         	  {
-        		radiochavalue = radioBtns[i].value;
+        		genderValue = radioBtns[i].value;
         	   }
          }
-         	if(radiochavalue=="" || radiochavalue==undefined)
+         	if(genderValue=="" || genderValue==undefined)
 
         	{
         		
-        		document.getElementById("error_msg_gender").innerText = "*select gender.";
+        		document.getElementById("error_msg_gender").innerText = "*Please select your gender.";
           		return false;
        
    	        }
@@ -172,7 +172,7 @@
         document.getElementById("yourlastname").innerText = lname;
         document.getElementById("emailid").innerText = email; 
         document.getElementById("number").innerText = phone;
-        document.getElementById("gender").innerText = radiochavalue;
+        document.getElementById("gender").innerText = genderValue;
 
         
         

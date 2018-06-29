@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   <head></head>
+   <body>
+      <!-- <form action ="" method = "post" id="form"> -->
+         <fieldset>
+            Enter your name: <input type="text" id="fname" .onchange = function() {checkValidation()};><br>
+            <div id="fname-error"></div>
+         </fieldset>
+         <fieldset>
+            Enter your Email: <input type="text" id="email" .onchange = function() {checkValidation()};><br>
+            <div id="Email-error"></div>
+         </fieldset>
+         <fieldset>
+            Enter your Ph No: <input type="number" id="phone"><br>
+            <div id="phone-error"></div>
+         </fieldset>
+         <fieldset>
+            <div id="radio">
+               <div>
+                  <input type="radio" name="gender" id="M"  value="male"> Male<br>
+                  <input type="radio" name="gender" id="F" value="female"> Female<br>
+               </div>
+            </div>
+            <div id="gender_error"></div>
+         </fieldset>
+         <fieldset>
+            <input type="submit" value="Submit" id="submit" name="submit" onclick="checkValidation()"/>
+         </fieldset>
+      <!-- </form> -->
+      <script>
+         
+            function checkValidation(){
+            var firstName = document.getElementById("fname").value;
+            var x = document.getElementById("fname");
+              x.value = x.value.toUpperCase();
+            var Email = document.getElementById("email").value;
+            var y = document.getElementById("email");
+              y.value = y.value.toUpperCase();
+            var phone = document.getElementById("phone").value;
+             var Gender;
+             var counter = 0;
+           if (firstName == "") {
+             document.getElementById("fname-error").innerHTML = "First Name is Empty";
+              counter = counter + 1;
+              
+                } 
+           else if (Email == "") {
+             document.getElementById("Email-error").innerHTML = "Email is Empty";
+             counter = counter + 1;
+             
+           } 
+            else if (phone.length > 10 || phone.length == 0) {
+             document.getElementById("phone-error").innerHTML = "Phone number cannot be empty";
+             counter = counter + 1;
+              
+           } 
+           else if (document.getElementById('M').checked){
+          Gender = document.getElementById("M").value;
+           }
+           else if (document.getElementById('F').checked){
+           Gender = document.getElementById("F").value;
+          }
+          else 
+            document.getElementById("gender_error").innerHTML= "select gender";
+          
+         document.getElementById("demo").innerHTML = x.value+ "<br>"+ y.value + "<br>" + phone + "<br>" + Gender
+              }
+         
+      </script>
+      <p id="demo"></p>
+   </body>
+</html>

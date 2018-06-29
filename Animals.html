@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+var animals, text, aLen, i;
+
+animals = [{name:"COCO", type:"Dog", colour:"black", breed:"German Shepherd"}, {name:"POPO", type:"cat", colour:"white", breed:"persian"}, {name:"Parrot", type:"tiger", colour:"White", breed:"Bengal Tiger"}, {name:"Simba", type:"lion", colour:"Orange", breed:"Jungle Lion"}];
+aLen = animals.length;
+text = "<ul>";
+for (i = 0; i < aLen; i++) {
+    text += "<li>" + animals[i].name+ " is my pet "+ animals[i].type+ " it is " + animals[i].colour + " in colour and belongs to "+ animals[i].breed  + "</li>";
+}
+text += "</ul>";
+document.getElementById("demo").innerHTML = text;
+</script>
+
+</body>
+</html>

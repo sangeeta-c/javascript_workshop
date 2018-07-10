@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hitesh</title>
+  
+  <style>
+
+    .btn{cursor: pointer;}
+    .List{list-style:none; margin:  5px;}
+    #boxBorder{width:300px;border:1px solid #000;padding: 5px 0 5px 20px;}
+
+  
+  </style>
+
+</head>
+<body>
+<p>------------------------------------------------------------------------------------------</p>
+  <div> 
+        <p>Write a function to find all even & odd numbers between 1 to 100.</p><br>
+        <button class="btn" onclick="evenNum()" >Click here</button>        
+        <p>Even Numbers: <span id="evenNum"></span> </p>
+        <p>Odd Numbers: <span id="oddNum"></span> </p>
+
+  </div>
+<p>------------------------------------------------------------------------------------------</p>
+<div> 
+        <p>Write a function to find all prime numbers between 1 to 100.</p><br>
+        <button class="btn" onclick="primeNum()" >Click here</button>        
+        <p>Prime Numbers: <span id="primeNum"></span> </p>
+
+  </div>
+<p>------------------------------------------------------------------------------------------</p>
+  <div>
+      <p>1. Write a JavaScript program to get the current date. mm-dd-yyyy, mm/dd/yyyy</p><br>
+      <button class="btn" onclick="result1()" >Click here</button>
+      <p id="page"></p>
+  </div>
+  <div>
+<p>------------------------------------------------------------------------------------------</p>
+    <p>2. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar
+    </p><br>
+        <div><input type="number" placeholder="enter a year" id="year"><button class="btn" onclick="result2()" >Click here</button></div>
+          <p id="msg"></p>
+    </div>
+<p>------------------------------------------------------------------------------------------</p>
+   <p>3. Write a JavaScript program to calculate multiplication and division of two numbers (input from user)</p>
+   <div id="boxBorder">
+    
+      <li class="List">1st Number <input type="number" placeholder="enter the number" id="num1">  </li>
+      <li class="List">1st Number <input type="number" placeholder="enter the number" id="num2">  </li>
+      <li class="List"> 
+        <button class="btn" onclick="multiplyNumbers()">Multiply</button> 
+        <button class="btn" onclick="divideNumbers()">Divide</button>  </li>
+      <li class="List">  The Result is: <span id="result"></span></li>
+    
+  </div>
+<p>------------------------------------------------------------------------------------------</p>
+  <p>3. Create a field. Calculat age with respect to DOB entered in field</p>
+  <div>
+    <label>Enter Yor Date of Birth & click the SUBMIT button to know your age</label><br>
+    <input type="date" placeholder="Enter Your Age" id="DOB">
+    <button class="btn" onclick="ageCalulator()" >SUBMIT</button>
+    <p id="age"></p>
+  </div>
+<p>------------------------------------------------------------------------------------------</p>
+<p> 4. Find the highest and lowest number.</p>
+  <div>
+    <input type="number" id="first">
+    <input type="number" id="second">
+    <input type="number" id="third">
+    <input type="number" id="fourth">
+    <button class="btn" onclick="checkNumber()">Click here to check</button>
+    <p id="lowNumber"></p>
+    <p id="highNumber"></p>
+
+  </div>
+<p>------------------------------------------------------------------------------------------</p>
+    <P>5. WAF: To check if palindrome</P>
+    <input type="text" id="palindrome" placeholder="Enter String" />
+    <input type="button" onclick="palindromeCheck()" value="Check Palindrome" />
+    <div id="modalwindow">
+      <p id="palondromeResult"></p>
+    </div>
+
+
+<!-- **************************************************************************************** -->
+<script>
+
+    function evenNum()
+      {
+          var i ;
+          for ( i=1; i<=100;i++)
+          {
+              if ( ( i % 2 ) == 0) 
+                {
+                  document.getElementById("evenNum").innerHTML += i +" , ";
+                }
+              else 
+                {
+                   document.getElementById("oddNum").innerHTML += i +" , ";
+                }
+          } 
+
+     } 
+     function primeNum()
+      {
+         for (var i = 2; i <= 100; i++)
+           {
+              var x = true;
+              for (var j = 2; j <= i; j++) 
+               {
+                  if (i%j===0 && j!==i) 
+                    {
+                      x = false;
+                    }
+                }
+              if (x === true) 
+                {
+                  document.getElementById("primeNum").innerHTML += i +" , ";
+                }
+            }     
+        }
+     
+
+    function result1()
+    {
+      var today = new Date();
+      var day = today.getDay();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1;
+      var yyyy = today.getFullYear();
+      var DayList = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+      var MonthList = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+      if (dd<10)
+      {
+        dd = "0"+dd;
+      }
+      if (mm<10)
+      {
+        mm = "0"+mm;
+      }
+
+      document.getElementById("page").innerHTML = mm +" - "+ dd +" - "+ yyyy +"<br>";
+      document.getElementById("page").innerHTML += mm +" / "+ dd +" / "+ yyyy+"<br>";
+    }
+//****************************************************************************************
+
+  function result2()
+    {
+      var year = document.getElementById("year").value;
+      if ( year=="")
+      {
+        document.getElementById("msg").innerHTML = "Plz enter year";
+      }
+      else
+        {
+          if ( year%100==0 && year%400==0 )
+          {
+               alert (year + " is a leap year");     
+          }
+          else
+           {
+              if ( year%4==0)
+                {
+                 alert (year + " is a leap year"); 
+                }
+
+                else
+                {
+                  alert (year + " is not a leap year"); 
+                }
+            }
+        }    
+    }
+//*********************************************************************************
+     function multiplyNumbers()
+     {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      var ans = num1*num2;
+      document.getElementById("result").innerHTML = ans;
+    }
+
+    function divideNumbers()
+     {
+      var num1 = document.getElementById("num1").value;
+      var num2 = document.getElementById("num2").value;
+      var ans = num1/num2;
+      document.getElementById("result").innerHTML = ans;
+    }
+//*********************************************************************************
+    
+     function ageCalulator()
+     {
+      var today = new Date();
+      var currentdate = today.getDate();
+      var currentmonth = today.getMonth();
+      var currentyear = today.getFullYear(); 
+
+      var dod1 = document.getElementById("DOB").value;
+      var dod2 = new Date(dod1);
+      var birthdate = dod2.getDate();
+      var birthmonth = dod2.getMonth();      
+      var birthyear = dod2.getFullYear();
+
+      if ( currentmonth < birthmonth)
+      {
+        currentmonth = currentmonth+10;
+        birthyear++;
+      }
+
+      var year = currentyear - birthyear;
+      var month = currentmonth - birthmonth;k
+      var day = currentdate - birthdate;
+
+      alert ( "You are "+year+" years "+month+" months and "+day+" days old");
+     }
+
+//*********************************************************************************
+
+    function checkNumber()
+    {
+      var first = Number (document.getElementById("first").value);
+      var second = Number (document.getElementById("second").value);
+      var third = Number (document.getElementById("third").value);
+      var fourth = Number (document.getElementById("fourth").value);  
+
+      // var firstNumber = Number(first);
+      // var secondNumber = Number(second);
+      // var thirdNumber = Number(third);
+      // var fourthNumber = Number(fourth);
+     
+     document.getElementById("lowNumber").innerHTML = "Lowest: "+ Math.min(first,second,third,fourth);
+    document.getElementById("highNumber").innerHTML = "Highest: "+ Math.max(first,second,third,fourth);
+     
+    }
+  //*********************************************************************************
+
+  function palindromeCheck()
+  {
+
+     var orignalString1 = document.getElementById("palindrome").value;
+     console.log(orignalString1);
+
+     var orignalString = orignalString1.toLowerCase();
+     console.log(orignalString);
+
+      var newstring = orignalString.split('');
+      console.log(newstring);
+
+      var newstring = newstring.reverse();
+      console.log(newstring);
+
+      var newstring = newstring.join('');
+      console.log(newstring);
+
+      if(orignalString == newstring)
+      {
+        alert( orignalString1 + " is a palindrome");
+      }
+      else 
+      {
+        alert( orignalString1 + " is not a palindrome");
+      }
+      
+  }
+
+
+//*********************************************************************************
+
+  </script>
+
+
+    
+
+       
+
+      
+
+
+  
+
+
+
+
+
+
+
+</body>
+</html>
+

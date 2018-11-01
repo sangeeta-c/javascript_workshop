@@ -1,0 +1,23 @@
+package package1;
+
+import java.util.Scanner;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TitleCheck {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C://Users/sangeeta.c/eclipse-workspace/chromedriver(1).exe");
+		WebDriver driver = new ChromeDriver();	
+		
+		String baseurl;
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter Url");
+		baseurl = in.nextLine();
+	    driver.get(baseurl);
+	    String actualTitle=driver.getTitle();
+	    System.out.println("TITLE IS:" +  actualTitle); 
+	}
+
+}
